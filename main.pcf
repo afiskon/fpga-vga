@@ -1,0 +1,17 @@
+set_io clkin  21
+
+set_io r[0]   119
+set_io r[1]   118
+set_io r[2]   91
+
+set_io g[0]   117
+set_io g[1]   116
+set_io g[2]   81
+
+set_io b[0]   115
+set_io b[1]   114
+
+set_io hsync  113
+set_io vsync  112
+
+set_io D5 95

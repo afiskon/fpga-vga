@@ -1,0 +1,28 @@
+// 1280x720 @ 60Hz
+
+// 75 Mhz, see `icepll -i 12 -o 75`
+SB_PLL40_CORE #(
+    .FEEDBACK_PATH("SIMPLE"),
+    .PLLOUT_SELECT("GENCLK"),
+    .DIVR(4'b0000),
+    .DIVF(7'b0110001),
+    .DIVQ(3'b011),
+    .FILTER_RANGE(3'b001),
+) uut (
+    .REFERENCECLK(clkin),
+    .PLLOUTCORE(clk),
+    .LOCK(D5), // keep this!
+    .RESETB(1'b1),
+    .BYPASS(1'b0)
+);
+
+parameter horiz_sync_pulse = 80;
+parameter horiz_back_porch = 216;
+parameter horiz_active_pixels = 1280;
+parameter horiz_front_porch = 72;
+
+parameter vert_sync_pulse = 5;
+parameter vert_back_porch = 22;
+parameter vert_active_pixels = 720;
+parameter vert_front_porch = 3;
+
